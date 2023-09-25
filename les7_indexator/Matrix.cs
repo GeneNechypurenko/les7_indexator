@@ -14,9 +14,15 @@ namespace les7_indexator
 
         private int[,] _arr;
 
+        private static int _seed;
+
+        static Matrix()
+        {
+            _seed = 0;
+        }
         public Matrix(int row, int col)
         {
-            Random rand = new Random();
+            Random rand = new Random(++_seed);
 
             Row = row;
             Col = col;
